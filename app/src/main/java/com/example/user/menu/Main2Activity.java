@@ -21,6 +21,7 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        LL = (LinearLayout) findViewById(R.id.ll2);
     }
 
     public boolean onCreateOptionsMenu (Menu menu){
@@ -29,7 +30,7 @@ public class Main2Activity extends AppCompatActivity {
 
         menu.add(0,0,250,"YELLOW");
 
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
 
@@ -44,7 +45,7 @@ public class Main2Activity extends AppCompatActivity {
             LL.setBackgroundColor(Color.GREEN);
         if (st.equals("YELLOW"))
             LL.setBackgroundColor(Color.YELLOW);
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
 

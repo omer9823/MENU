@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     LinearLayout LL;
     Button btn1;
@@ -20,17 +20,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LL = (LinearLayout) findViewById(R.id.ll1);
     }
 
-    public boolean onCreateOptionsMenu (Menu menu){
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
-
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
-
-    public boolean onOptionsItemSelected (MenuItem item){
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         String st=item.getTitle().toString();
         if (st.equals("RED"))
             LL.setBackgroundColor(Color.RED);
@@ -38,16 +38,14 @@ public class MainActivity extends AppCompatActivity {
             LL.setBackgroundColor(Color.BLUE);
         if (st.equals("GREEN"))
             LL.setBackgroundColor(Color.GREEN);
-        return true;
+        return super.onOptionsItemSelected(item);
     }
-
 
     public void omer1 (View view) {
 
         Intent t = new Intent(this, Main2Activity.class);
         startActivity(t);
     }
-
 
 
 }
